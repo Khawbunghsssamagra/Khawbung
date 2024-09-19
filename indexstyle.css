@@ -7,6 +7,7 @@
 body
 {
     background-image: url(wallpaper.jpg);
+    height: 100vh;
     background-size: 100%;
     background-position: top;
     font-family: sans-serif;
@@ -16,7 +17,7 @@ body
     float: left;
 }
 .container{
-    width: 50%px
+    width: 100%
     margin: 0px auto;
 }
 .top-header{
