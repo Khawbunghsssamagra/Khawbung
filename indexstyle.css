@@ -260,7 +260,7 @@ border-bottom: none;
 .testimonial-text {
     background: #bbe1ff;
     padding: 20px;
-    line-height: 25px;
+    line-height: 33px;
     border-radius: 10px;
     font-size: 18px;
     text-align: justify;
@@ -287,3 +287,7 @@ border-bottom: none;
 .designation {
     color: #fff;
 }
+
+
+
+
