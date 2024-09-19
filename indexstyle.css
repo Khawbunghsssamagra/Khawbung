@@ -7,8 +7,7 @@
 body
 {
     background-image: url(wallpaper.jpg);
-    height: 100vh;
-    background-size: 100%;
+    background-size: 1400px;
     background-position: top;
     font-family: sans-serif;
 }
@@ -17,7 +16,7 @@ body
     float: left;
 }
 .container{
-    width: 100%
+    width: 50%px
     margin: 0px auto;
 }
 .top-header{
@@ -42,7 +41,6 @@ body
 {
     background: rgb(0,100,0);
     background-position: center;
-    background-size: 100%;
     text-align: center;
 }
 .menu-bar ul
