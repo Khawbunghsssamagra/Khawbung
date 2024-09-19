@@ -7,7 +7,7 @@
 body
 {
     background-image: url(wallpaper.jpg);
-    background-size: 1400px;
+    background-size: 100%;
     background-position: top;
     font-family: sans-serif;
 }
@@ -41,6 +41,7 @@ body
 {
     background: rgb(0,100,0);
     background-position: center;
+    background-size: 100%;
     text-align: center;
 }
 .menu-bar ul
