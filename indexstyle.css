@@ -6,7 +6,7 @@
 }
 body
 {
-    background-image: url(khss.jpg);
+    background-image: url(wallpaper.jpg);
     background-size: 1400px;
     background-position: top;
     font-family: sans-serif;
@@ -125,12 +125,20 @@ body
 
 .margin-top-50
 {
-    margin-top: 140px;
+    margin-top: 210px;
 }
 .width-33 
 {
-    width: 50%;
+    width: 49%;
     float: right;
+    margin-right: 5px;
+}
+
+.width-44 
+{
+    width: 49%;
+    float: left;
+    margin-left: 5px;
 }
 .latest-news
 {
@@ -145,14 +153,14 @@ body
 .heading-sect
 {
     width: 100%;
-    float: left;
+    text-align: center;
     border-bottom: 1px solid #cfcfcf;
     padding-bottom: 1px;
-    margin-bottom: 15px;
-    padding-top: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 15px;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
     border: 1px solid #cfcfcf;
     background: #fff;
     color: #313131;
@@ -163,8 +171,10 @@ body
     padding: 0px;
     font-size: 25px;
     font-weight: 600;
-    color: rgb(0, 17, 255);
-    padding-bottom: 0px;
+    color: #fff;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    background-color: #2196f3
 
 }
 .latest-updates-ul
@@ -234,4 +244,46 @@ border-bottom: none;
     font-weight: bold;
     columns: #fff;
     text-decoration: none;
+}
+
+
+
+
+
+
+.testimonial {
+    width: 100%;
+    float: left;
+    margin-right: 2.5%;
+}
+
+.testimonial-text {
+    background: #bbe1ff;
+    padding: 20px;
+    line-height: 25px;
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: justify;
+}
+
+.testimonial-detail {
+    float: left;
+    margin-top: 10px;
+}
+
+.testimonial-img {
+    float: right;
+}
+.testimonial-name{
+    margin-left: 10px;
+    float: left;
+}
+.testimonial-name h5{
+    font-size: 20px;
+    margin-top: 8px;
+    color: #fff;
+}
+
+.designation {
+    color: #fff;
 }
