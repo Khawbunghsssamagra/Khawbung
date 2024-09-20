@@ -202,7 +202,7 @@ border-bottom: none;
 
 .footer{
     background: #232f3e;
-    margin-top: 50px;
+    margin-top: 10px;
     padding: 50px 0px;
     columns: 3;
 }
@@ -211,6 +211,7 @@ border-bottom: none;
     font-weight: bold;
     color: #fff;
     margin-bottom: 10px;
+    margin-left: 5px;
 }
 .quicklink-menu{
     list-style: none;
@@ -301,7 +302,7 @@ border-bottom: none;
     margin-top: 10px;
     color: #fff;
     margin-left: 5px;
-    margin-right: 5px;
+    margin-right: 3px;
     font-size: 20px;
 }
 .scroll-head span{
@@ -320,6 +321,17 @@ border-bottom: none;
     text-decoration: underline #fff;
 }
 
+.image-slider img{
+    height: 400px;
+}
 
+.date {
+    background: #fffb00;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-weight: 600;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
 
