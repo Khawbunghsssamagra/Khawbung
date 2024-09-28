@@ -31,19 +31,16 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <!-- Navigation menu -->
 <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="#" style="font-size:36px;">
-    <img src="https://codingcush.com/uploads/logo/logo_61b79976c34f5.png" width="200"  class="d-inline-block align-top" alt="">
-    Coding Cush
+    Khawbung Senior Secondary School
   </a>
 
   <form class="form-inline my-2 my-lg-0">
-      <img src="images/user.png" style="width:50px; height: 50px; margin-right:10px" alt="user-avtar">
   <a href="logout.php" class="btn btn-primary"><i class="fa fa-lock-open"></i> Logout</a>
     </form>
 </nav>
     <p>
 
     <div class="container">
-    <a href="https://www.youtube.com/channel/UCerL4wDA74l1hmv8gnGJCWg" target="_blank"><img class="card-img-top" src="images/welcome-to-coding-cush.gif" alt="Card image cap" style="width:750px; height:400px;"></a>
     <div class="page-header">
         <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1>
     </div>

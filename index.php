@@ -47,6 +47,7 @@ if(isset($_POST['submit'])){
   	}else{
   		$msg = "Failed to upload image";
   	}
+	
 
   	$insert_data = "INSERT INTO student_data(u_card, u_f_name, u_l_name, u_father, u_aadhar, u_birthday, u_gender, u_email, u_phone, u_state, u_dist, u_village, u_police, u_pincode, u_mother, u_family, staff_id,image,uploaded) VALUES ('$u_card','$u_f_name','$u_l_name','$u_father','$u_aadhar','$u_birthday','$u_gender','$u_email','$u_phone','$u_state','$u_dist','$u_village','$u_police','$u_pincode','$u_mother','$u_family','$u_staff_id','$image',NOW())";
   	$run_data = mysqli_query($con,$insert_data);
@@ -70,7 +71,7 @@ if(isset($_POST['submit'])){
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Student Crud Operation</title>
+	<title>Student Registered</title>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -83,7 +84,6 @@ if(isset($_POST['submit'])){
 <body>
 
 	<div class="container">
-<a href="https://lexacademy.in" target="_blank"><img src="https://codingcush.com/uploads/logo/logo_61b79976c34f5.png" alt="" width="350px" ></a><br><hr>
 
 <!-- adding alert notification  -->
 <?php
@@ -103,7 +103,7 @@ if(isset($_POST['submit'])){
 
 	<a href="logout.php" class="btn btn-success"><i class="fa fa-lock"></i> Logout</a>
 	<button class="btn btn-success" type="button" data-toggle="modal" data-target="#myModal">
-  <i class="fa fa-plus"></i> Add New Student
+  <i class="fa fa-plus"></i>New Student Registration
   </button>
   <a href="export.php" class="btn btn-success pull-right"><i class="fa fa-download"></i> Export Data</a>
   <hr>
@@ -112,9 +112,9 @@ if(isset($_POST['submit'])){
 			<tr>
 			   <th class="text-center" scope="col">S.L</th>
 				<th class="text-center" scope="col">Name</th>
-				<th class="text-center" scope="col">Student Id.</th>
+				<th class="text-center" scope="col">Student PEN</th>
 				<th class="text-center" scope="col">Phone</th>
-				<th class="text-center" scope="col">Staff Id</th>
+				<th class="text-center" scope="col">Class</th>
 				<th class="text-center" scope="col">View</th>
 				<th class="text-center" scope="col">Edit</th>
 				<th class="text-center" scope="col">Delete</th>
@@ -198,8 +198,6 @@ if(isset($_POST['submit'])){
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-		<center><img src="https://codingcush.com/uploads/logo/logo_61b79976c34f5.png" width="300px" height="80px" alt=""></center>
-    
       </div>
       <div class="modal-body">
         <form method="POST" enctype="multipart/form-data">
@@ -208,8 +206,8 @@ if(isset($_POST['submit'])){
 			<!-- This is Address with email id  -->
 <div class="form-row">
 <div class="form-group col-md-6">
-<label for="inputEmail4">Student Id.</label>
-<input type="text" class="form-control" name="card_no" placeholder="Enter 12-digit Student Id." maxlength="12" required>
+<label for="inputEmail4">Student PEN</label>
+<input type="text" class="form-control" name="card_no" placeholder="Enter 11-digit Student PEN" maxlength="11" required>
 </div>
 <div class="form-group col-md-6">
 <label for="inputPassword4">Mobile No.</label>
@@ -269,12 +267,10 @@ if(isset($_POST['submit'])){
 </div>
 </div>
 
-
 <div class="form-group">
-<label for="family">Family Member's</label>
-    <textarea class="form-control" name="family" rows="3"></textarea>
+<label for="inputAddress">Class</label>
+<input type="text" class="form-control" name="staff_id" maxlength="20" placeholder="XI(Sc) or XII(Sc)">
 </div>
-
 
 
 <div class="form-group">
@@ -338,16 +334,11 @@ if(isset($_POST['submit'])){
 </div>
 </div>
 
-
-<div class="form-group">
-<label for="inputAddress">Staff Id one who add this Student.</label>
-<input type="text" class="form-control" name="staff_id" maxlength="12" placeholder="Enter 12-digit Staff Id">
-</div>
 			
 
 
         	<div class="form-group">
-        		<label>Image</label>
+        		<label>Passport</label>
         		<input type="file" name="image" class="form-control" >
         	</div>
 
@@ -428,7 +419,7 @@ while($row = mysqli_fetch_array($run_data))
 	$email = $row['u_email'];
 	$aadhar = $row['u_aadhar'];
 	$Bday = $row['u_birthday'];
-	$family = $row['u_family'];
+	$staff_id = $row['staff_id'];
 	$phone = $row['u_phone'];
 	$address = $row['u_state'];
 	$village = $row['u_village'];
@@ -456,28 +447,25 @@ while($row = mysqli_fetch_array($run_data))
 					<div class='col-sm-4 col-md-2'>
 						<img src='upload_images/$image' alt='' style='width: 150px; height: 150px;' ><br>
 		
-						<i class='fa fa-id-card' aria-hidden='true'></i> $card<br>
+						<i class='fa fa-id-card' aria-hidden='true'> PEN -</i> $card<br>
 						<i class='fa fa-phone' aria-hidden='true'></i> $phone  <br>
 						Issue Date : $time
 					</div>
 					<div class='col-sm-3 col-md-6'>
 						<h3 class='text-primary'>$name $name2</h3>
 						<p class='text-secondary'>
-						<strong>S/O :</strong> $father <br>
-						<strong>M/O :</strong>$mother <br>
-						<strong>Aadhar :</strong> $aadhar <br>
-						<i class='fa fa-venus-mars' aria-hidden='true'></i> $gender
+						Father's Name :<strong> $father </strong><br>
+						Mother's Name :<strong> $mother </strong><br>
+						<strong>Aadhar : $aadhar </strong><br>
+						<i class='fa fa-venus-mars' aria-hidden='true'> Gender : </i><strong> $gender </strong>
 						<br />
-						<i class='fa fa-envelope-o' aria-hidden='true'></i> $email
+						<i class='fa fa-envelope-o' aria-hidden='true'>    Email  :</i> $email
 						<br />
 						<div class='card' style='width: 18rem;'>
-						<i class='fa fa-users' aria-hidden='true'></i> Familiy :
-								<div class='card-body'>
-								<p> $family </p>
-								</div>
+						<i class='fa fa-users' aria-hidden='true'></i> Class : $staff_id
 						</div>
 						
-						<i class='fa fa-home' aria-hidden='true'> Address : </i> $village, $police, <br> $dist, $state - $pincode
+						<i class='fa fa-home' aria-hidden='true'> Address : </i> $village <br> $dist, $state  - $pincode
 						<br />
 						</p>
 						<!-- Split button -->
@@ -555,8 +543,8 @@ while($row = mysqli_fetch_array($run_data))
 
 		<div class='form-row'>
 		<div class='form-group col-md-6'>
-		<label for='inputEmail4'>Student Id.</label>
-		<input type='text' class='form-control' name='card_no' placeholder='Enter 12-digit Student Id.' maxlength='12' value='$card' required>
+		<label for='inputEmail4'>Student PEN</label>
+		<input type='text' class='form-control' name='card_no' placeholder='Enter 11-digit Student PEN' maxlength='12' value='$card' required>
 		</div>
 		<div class='form-group col-md-6'>
 		<label for='inputPassword4'>Mobile No.</label>
@@ -618,10 +606,9 @@ while($row = mysqli_fetch_array($run_data))
 		
 		
 		<div class='form-group'>
-		<label for='family'>Family Member's</label>
-			<textarea class='form-control' name='family' rows='3'>$family</textarea>
+		<label for='inputAddress'>Class</label>
+		<input type='text' class='form-control' name='staff_id' maxlength='20' placeholder='XI(Sc) or XII(Sc)' value='$staffCard'>
 		</div>
-		
 		
 		
 		<div class='form-group'>
@@ -685,15 +672,10 @@ while($row = mysqli_fetch_array($run_data))
 		</div>
 		</div>
 		
-		
-		<div class='form-group'>
-		<label for='inputAddress'>Staff Id one who Activate this card.</label>
-		<input type='text' class='form-control' name='staff_id' maxlength='12' placeholder='Enter 12-digit Staff Id' value='$staffCard'>
-		</div>
         	
 
         	<div class='form-group'>
-        		<label>Image</label>
+        		<label>Passport</label>
         		<input type='file' name='image' class='form-control'>
         		<img src = 'upload_images/$image' style='width:50px; height:50px'>
         	</div>
