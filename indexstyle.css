@@ -125,6 +125,14 @@ body
     background: rgb(0,100,0);
 }
 
+
+.loginimg{
+    padding-top: 4px;
+    width: 130px;
+    height: 50px;
+}
+
+
 .margin-top-50
 {
     margin-top: 210px;
