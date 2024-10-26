@@ -87,3 +87,15 @@ p
     padding-left: 15px;
     height: 58px;
 }
+
+.back
+{
+    text-align: right;
+    font-size: 28px;
+    height: 58px;
+    padding-right: 20px;
+}
+.background
+{
+    background: #fffb00;
+}
