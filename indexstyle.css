@@ -352,5 +352,7 @@ border-bottom: none;
 .footercopyright {
     background: #232f3e;
     color: #fff;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
