@@ -35,22 +35,42 @@
       <div class="right-side">
         <div class="topic-text">Send us a message</div>
         <p></p>
-      <form action="https://formspree.io/f/xrbzekyd" method="POST">
-        <div class="input-box">
-          <input type="text" placeholder="Enter your name">
-        </div>
-        <div class="input-box">
-          <input type="text" placeholder="Enter your email">
-        </div>
-            <div class="input-box message-box">
-                <input type="text" placeholder="Enter your message">
+        <form method="POST" action="https://script.google.com/macros/s/AKfycbxWiKjVmyd1L1aqbJn3XnrW8sn-L0Tr6fJikHI1jmgLxHa3txfKfrt0_q1a9eoiO0SI9g/exec" name="contact-form">
+            <div class="input-box">
+              <input type="text" name="name" placeholder="Enter your name">
             </div>
-        <div class="submit">
-          <button type="submit">Send Now</button>
-        </div>
-      </form>
+            <div class="input-box">
+              <input type="number" name="ph" placeholder="Enter your Phone No.">
+            </div>
+            <div class="input-box">
+              <input type="text" name="email" placeholder="Enter your email">
+            </div>
+            <div class="input-box message-box">
+                <input type="text" name="message" placeholder="Enter your message">
+            </div>
+                <div class="submit">
+             <button type="submit">Send Now</button>
+           </div>
+        </form>
     </div>
     </div>
   </div>
 </body>
 </html>
+
+
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxWiKjVmyd1L1aqbJn3XnrW8sn-L0Tr6fJikHI1jmgLxHa3txfKfrt0_q1a9eoiO0SI9g/exec'
+
+const form = document.forms['contact-form']
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+  .then(response => alert("Thank you! your form is submitted successfully." ))
+  .then(() => { window.location.reload(); })
+  .catch(error => console.error('Error!', error.message))
+})
+
+</script>
